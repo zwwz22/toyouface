@@ -43,7 +43,7 @@
     <file path="$USER_HOME$/workspace/Buffet/app/controllers/mxp/designs_controller.rb" changelist="eb881d91-9e73-44cc-82c1-4626133a639c" time="1385363940976" ignored="false" />
     <file path="/designs_controller.rb" changelist="eb881d91-9e73-44cc-82c1-4626133a639c" time="1385363940976" ignored="false" />
     <file path="/nginx.config" changelist="eb881d91-9e73-44cc-82c1-4626133a639c" time="1385368718611" ignored="false" />
-    <file path="/.gitignore" changelist="eb881d91-9e73-44cc-82c1-4626133a639c" time="1385372017203" ignored="false" />
+    <file path="/.gitignore" changelist="eb881d91-9e73-44cc-82c1-4626133a639c" time="1385372879182" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +108,7 @@
       <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="17" column="1" selection-start="454" selection-end="454" vertical-scroll-proportion="0.42429283">
               <folding />
             </state>
           </provider>
@@ -777,7 +777,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="17" column="1" selection-start="454" selection-end="454" vertical-scroll-proportion="0.42429283">
           <folding />
         </state>
       </provider>
