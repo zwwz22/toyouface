@@ -13,6 +13,10 @@ Abc::Application.routes.draw do
                                       }
   resources :homes
 
+  resources :users
 
+  scope 'admin' do
+    resources :homes
+  end
 
 end

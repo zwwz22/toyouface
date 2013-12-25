@@ -1,2 +1,69 @@
-aaa
-<%= link_to 'deng chu ',destroy_user_session_path,:method => :delete %>
+
+<% if notice %>
+    <script type="text/javascript">
+      alert("<%= notice %>")
+    </script>
+    <% end %>
+<%= link_to 'out',destroy_user_session_path ,:method => :delete %>
+<a href="<%= url_for users_path(:format => :xls) %>" style="position: fixed;top: 30px;left: 0;z-index: 111">xls</a>
+<div style="" id="click">
+  <div style="text-indent: 30px;width: 718px">9个月前，她盘下来的小公寓的一间卧室招租，就这样，我住了进来。 在我还没有见到她的时候，我就已经决定住进来了。第一次看房时，她并不在家，客厅挂着一副巨大的巴西国旗，让我没见其人就对她印象还不错，就要搬走的旧租客替我介绍房间，如今我竟忘记那个男人的名字了，那是个很好说话的男人，他说我哪天搬进来，他就提前一天搬走，因为女友就住在附近，很快他们要一起去德国了。真好，当时我觉得，他一定是个有故事的人，可惜没机会分享了。故事还在继续，他又要启程。另一个房间住着两兄弟，每天凌晨两点回来，洗漱完毕还要在客厅跪坐，进行某种奇怪的默读仪式。他们中，一人屈膝跪着，一人盘腿坐下，手持烫金封皮的经文。灯光昏暗，客厅有一副绘有裸女的油画，每逢此时，也被两兄弟用白色粗棉布遮盖起来。仪式要进行到深夜，他们睡到第二天中午才起床。我和他们交集很少，也没听他们讲起过关于自己的丝毫，庆幸的是：一，我洗漱的时间不会和他们冲突；二，他们从不打呼噜。
+<div style="text-indent: 30px;width: 718px">我见到Eny前，已经通过两次电话。电话里，听她说西语怪怪的，尤其说到数字和时间，要确认好几遍。我以为她太老了，说话口齿不清，这也是当初称之为老太的原因之一。事后知道她是巴西人，她说的蹩脚西语夹杂着巴式葡萄牙语口音。有时我希望她干脆说葡萄牙语算了，我希望有机会能跟她学点葡语，不过，一切尝试都在她点起一根烟时作止。她在房间抽烟，也在客厅抽烟，厨房和卫生间也有她的烟灰缸。就像过敏原一样，每个人都有几件受不了的东西，烟之于我就是一种。我很少因为烟而迁怒吸烟的人，除非这个人从不考虑别人的感受。而Eny点燃一根烟时，她的感受是怎么样的呢，她若有所思，又在想些什么。
+</div>
+  </div>
+</div>
+<div style="width: 300px;margin-left: 500px;display: none" id="a">我见到Eny前，已经通过两次电话。电话里，听她说西语怪怪的，尤其说到数字和时间，要确认好几遍。我以为她太老了，说话口齿不清，这也是当初称之为老太的原因之一。事后知道她是巴西人，她说的蹩脚西语夹杂着巴式葡萄牙语口音。有时我希望她干脆说葡萄牙语算了，我希望有机会能跟她学点葡语，不过，一切尝试都在她点起一根烟时作止。她在房间抽烟，也在客厅抽烟，厨房和卫生间也有她的烟灰缸。就像过敏原一样，每个人都有几件受不了的东西，烟之于我就是一种。我很少因为烟而迁怒吸烟的人，除非这个人从不考虑别人的感受。而Eny点燃一根烟时，她的感受是怎么样的呢，她若有所思，又在想些什么。
+</div>
+
+
+<div class="column" style="margin-top: 600px">
+  <p>1111111111111111111111111111111111111111111111111111111111111111111</p>
+  <p>2222222222222222222222222222222222222222222222222222222222222222222</p>
+  <p>2222222222222222222222222222222222222222222222222222222222222222222</p>
+</div>
+
+<script type="text/javascript">
+
+  $(function(){
+      var a = 1;
+      $('#click').click(function(){
+          if(a == 1){
+              $(this).animate({width:"500px"},1000).animate({width:"550px"},500).animate({width:"500px"},1000,function(){
+                          $(this).css({
+                              border: 'pink solid 1px'
+                          });
+                          $('#a').fadeIn();
+                          a = 2;
+                      })
+          }else{
+              $('#a').fadeOut();
+
+              $(this).animate({width:"800px"},1000,function(){
+                  $(this).css({
+                      border: 'goldenrod solid 1px'
+                  });
+                  a = 1;
+              })
+          }
+      })
+  })
+</script>
+<style type="text/css">
+  * {
+      box-sizing: border-box;
+  }
+  #click {
+      width: 800px;
+      height:1600px;
+      background: #EBF1F4;
+      opacity: 0.45;
+      padding: 40px;
+      overflow: hidden;
+      border: goldenrod solid 1px;
+      box-shadow: 1px 2px 5px #888888;
+      border-radius: 10px;
+  }
+    .column{
+        -webkit-column-count:2;
+    }
+</style>

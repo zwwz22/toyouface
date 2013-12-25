@@ -7,8 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
 <%= yield %>
+<% if flash.present? %>
+    <script>
+        <% flash.each do |name, msg| %>
+        <% next if msg.to_s == 'true' %>
+        show<%= if name.to_s == 'notice'; 'Success' else 'Error' end %>("<%= msg %>");
+        <% end %>
+    </script>
+<% end %>
 
 </body>
 </html>

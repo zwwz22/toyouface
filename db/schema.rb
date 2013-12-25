@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131118023525) do
+ActiveRecord::Schema.define(:version => 20131210055114) do
+
+  create_table "collection_relationships", :force => true do |t|
+    t.integer  "collection_user_id"
+    t.integer  "be_collection_user_id"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+  end
+
+  add_index "collection_relationships", ["be_collection_user_id"], :name => "index_collection_relationships_on_be_collection_user_id"
+  add_index "collection_relationships", ["collection_user_id"], :name => "index_collection_relationships_on_collection_user_id"
 
   create_table "oauth_access_grants", :force => true do |t|
     t.integer  "resource_owner_id",                 :null => false
@@ -51,6 +61,16 @@ ActiveRecord::Schema.define(:version => 20131118023525) do
   end
 
   add_index "oauth_applications", ["uid"], :name => "index_oauth_applications_on_uid", :unique => true
+
+  create_table "relationships", :force => true do |t|
+    t.integer  "focus_user_id"
+    t.integer  "be_focus_user_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  add_index "relationships", ["be_focus_user_id"], :name => "index_relationships_on_be_focus_user_id"
+  add_index "relationships", ["focus_user_id"], :name => "index_relationships_on_focus_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "name",                   :default => "", :null => false

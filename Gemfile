@@ -32,7 +32,7 @@ gem 'jquery-rails'
 # gem 'unicorn'
 
 # Deploy with Capistrano
-gem 'capistrano'
+gem 'mina'
 
 # To use debugger
 # gem 'debugger'
@@ -40,3 +40,5 @@ gem 'devise'
 gem 'doorkeeper'
 gem 'cancan'
 gem 'unicorn'
+gem 'cancan'
+gem 'to_xls'
