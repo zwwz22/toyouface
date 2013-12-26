@@ -11,21 +11,25 @@ require 'mina/rvm'
 #   repository   - Git repo to clone from. (needed by mina/git)
 #   branch       - Branch name to deploy. (needed by mina/git)
 
-set :domain, 'root@112.124.57.28'
-set :deploy_to, '/alidata1/xiyou/apps/toyouface'
+#set :domain, 'root@112.124.57.28'
+set :domain, 'zhangw@localhost'
+#set :deploy_to, '/alidata1/xiyou/apps/toyouface'
+set :deploy_to, '/tmp/zhangw'
 #set :app_path,   "#{deploy_to}/#{current_path}"
 set :repository, 'git@github.com:zwwz22/toyouface.git'
 set :branch, 'master'
-set :rvm_path, '/usr/local/rvm/scripts/rvm'
+#set :rvm_path, '/usr/local/rvm/scripts/rvm'
+set :rvm_path, '/home/zhangw/.rvm/scripts/rvm'
+#set :keep_releases, 2
 
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
 # They will be linked in the 'deploy:link_shared_paths' step.
 set :shared_paths, ['config/database.yml', 'log']
 
 # Optional settings:
-#   set :user, 'root'    # Username in the server to SSH to.
+#   set :user, 'zhangw'    # Username in the server to SSH to.
 #   set :port, '30000'     # SSH port number.
-set :ssh_options, '-A'
+#set :ssh_options, '-A'
 
 # This task is the environment that is loaded for most commands, such as
 # `mina deploy` or `mina rake`.
@@ -35,7 +39,8 @@ task :environment do
   # invoke :'rbenv:load'
 
   # For those using RVM, use this to load an RVM version@gemset.
-  invoke :'rvm:use[ruby-1.9.3-p448@default]'
+  #invoke :'rvm:use[ruby-1.9.3-p448@default]'
+  invoke :'rvm:use[ruby-2.0.0-p195@default]'
 end
 
 # Put any custom mkdir's in here for when `mina setup` is ran.
@@ -64,21 +69,25 @@ task :deploy => :environment do
     #invoke :'rails:assets_precompile'
 
     to :launch do
-
-      queue "cd #{deploy_to}/current/"
-      queue "rails s -p 3001"
+      invoke :restart
+      #queue "cd #{deploy_to}/current/"
+      #queue "rails s -p 3001"
       #queue "touch #{deploy_to}/tmp/restart.txt"
     end
   end
 end
 
 task :restart => :environment do
-  queue  %[echo "-----> Be sure to edit 'shared/config/database.yml'."]
-  queue "rm #{deploy_to}/deploy.lock"
-  queue "kill -9 `cat /alidata1/xiyou/apps/toyouface/current/tmp/pids/server.pid`"
+  queue  %[echo "-----> restart unicorn'."]
+  #queue "rm #{deploy_to}/deploy.lock"
+  #queue "kill -9 `cat /alidata1/xiyou/apps/toyouface/current/tmp/pids/server.pid`"
+  queue "kill -9 `cat #{deploy_to}/current/tmp/pids/unicorn.pid`"
   queue! %[cd  "#{deploy_to}/current"]
-  queue "rails s -p 3001"
-  #  #queue "touch #{deploy_to}/tmp/restart.txt"
+  #queue "rails s -p 3001"
+  queue "unicorn -D -c config/unicorn.rb"
+  queue  %[echo "-----> restart nginx'."]
+  queue "touch #{deploy_to}/tmp/restart.txt"
+  queue  %[echo "-----> all ok'."]
   #invoke :deploy
 end
 
