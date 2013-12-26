@@ -68,25 +68,26 @@ task :deploy => :environment do
     #invoke :'rails:db_migrate'
     #invoke :'rails:assets_precompile'
 
-    to :launch do
-      invoke :restart
+    #to :launch do
+    #  invoke :restart
       #queue "cd #{deploy_to}/current/"
       #queue "rails s -p 3001"
       #queue "touch #{deploy_to}/tmp/restart.txt"
-    end
+    #end
   end
 end
 
 task :restart => :environment do
   queue  %[echo "-----> restart unicorn'."]
-  #queue "rm #{deploy_to}/deploy.lock"
+  queue "rm #{deploy_to}/deploy.lock"
   #queue "kill -9 `cat /alidata1/xiyou/apps/toyouface/current/tmp/pids/server.pid`"
-  queue "kill -9 `cat #{deploy_to}/current/tmp/pids/unicorn.pid`"
+  queue! %[  ps aux |grep unicorn|grep -v grep |awk '{print $2}'|xargs kill -9 ]
   queue! %[cd  "#{deploy_to}/current"]
   #queue "rails s -p 3001"
   queue "unicorn -D -c config/unicorn.rb"
   queue  %[echo "-----> restart nginx'."]
   queue "touch #{deploy_to}/tmp/restart.txt"
+  queue 'sudo service nginx restart'
   queue  %[echo "-----> all ok'."]
   #invoke :deploy
 end
