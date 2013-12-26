@@ -4,7 +4,7 @@
     <list default="true" id="73ea2008-e460-4d62-be39-d3a56044c4db" name="Default" comment="" />
     <ignored path="abc.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/deploy.rb" changelist="73ea2008-e460-4d62-be39-d3a56044c4db" time="1388032562477" ignored="false" />
+    <file path="/deploy.rb" changelist="73ea2008-e460-4d62-be39-d3a56044c4db" time="1388037280213" ignored="false" />
     <file path="$PROJECT_DIR$/../Buffet/app/controllers/admin/sliders_controller.rb" changelist="73ea2008-e460-4d62-be39-d3a56044c4db" time="1388030426119" ignored="false" />
     <file path="$PROJECT_DIR$/../Buffet/app/models/slider.rb" changelist="73ea2008-e460-4d62-be39-d3a56044c4db" time="1388028587195" ignored="false" />
     <file path="/slider.rb" changelist="73ea2008-e460-4d62-be39-d3a56044c4db" time="1388028048949" ignored="false" />
@@ -51,7 +51,16 @@
       <file leaf-file-name="deploy.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/deploy.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="80" selection-start="2986" selection-end="2986" vertical-scroll-proportion="0.0">
+            <state line="56" column="50" selection-start="2119" selection-end="2119" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="unicorn.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/unicorn.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -96,7 +105,16 @@
       <file leaf-file-name="index.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/users/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="22" selection-start="119" selection-end="119" vertical-scroll-proportion="0.2006689">
+            <state line="16" column="60" selection-start="368" selection-end="368" vertical-scroll-proportion="0.41594455">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nginx.config" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/nginx.config">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="0" selection-start="302" selection-end="302" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -112,8 +130,8 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/config/deploy.rb" />
         <option value="$PROJECT_DIR$/app/views/users/index.html.erb" />
+        <option value="$PROJECT_DIR$/config/deploy.rb" />
       </list>
     </option>
   </component>
@@ -397,13 +415,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/deploy.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="80" selection-start="2986" selection-end="2986" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/relationship.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -418,9 +429,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/deploy.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="50" selection-start="2119" selection-end="2119" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/nginx.config">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="302" selection-end="302" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/unicorn.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="22" selection-start="119" selection-end="119" vertical-scroll-proportion="0.2006689">
+        <state line="16" column="60" selection-start="368" selection-end="368" vertical-scroll-proportion="0.41594455">
           <folding />
         </state>
       </provider>
